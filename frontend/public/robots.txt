@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.stritgradacademy.org.za/sitemap.xml
