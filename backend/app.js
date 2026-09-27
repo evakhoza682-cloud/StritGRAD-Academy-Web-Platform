@@ -43,7 +43,7 @@ app.use('/api', formLimiter)
 // --- Health check ---
 app.get('/health', (req, res) => res.json({ status: 'ok', service: 'stritgrad-academy-backend' }))
 app.get('/', (req, res) => res.json({ status: 'ok', message: 'StritGRAD Academy API is running.' }))
-app.get('/debug-db', (req, res) => { const raw = process.env.DATABASE_URL || '' try { const parsed = new URL(raw) res.json({ hasValue: !!raw, length: raw.length, protocol: parsed.protocol, hostname: parsed.hostname, port: parsed.port, pathname: parsed.pathname }) } catch (e) { res.json({ hasValue: !!raw, length: raw.length, firstChars: raw.slice(0, 20), lastChars: raw.slice(-20), parseError: e.message }) } })
+app.get('/debug-db', (req, res) => { const raw = process.env.DATABASE_URL || ''; try { const parsed = new URL(raw); res.json({ hasValue: !!raw, length: raw.length, protocol: parsed.protocol, hostname: parsed.hostname, port: parsed.port, pathname: parsed.pathname }); } catch (e) { res.json({ hasValue: !!raw, length: raw.length, firstChars: raw.slice(0, 20), lastChars: raw.slice(-20), parseError: e.message }); } });
 
 // --- Routes ---
 app.use('/api', publicRoutes)
