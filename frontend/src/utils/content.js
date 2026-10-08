@@ -107,7 +107,7 @@ export const successStories = [
     business: 'Founder, StritGRAD Academy',
     location: 'Johannesburg, Gauteng',
     story: 'An Absa x YAEI beneficiary himself, Joseph represented StritGRAD Academy at One Young World 2025 in Munich, speaking on financial inclusion through entrepreneurship — reinforcing that inclusion is a daily commitment to giving people the tools to build their own livelihoods.',
-    image: '/images/people/founder-joseph-khoza.png'
+    image: '/images/people/founder-joseph-khoza.jpg'
   },
   {
     name: 'SpazaEats Founder',
@@ -154,7 +154,7 @@ export const newsItems = [
     category: 'Impact Stories',
     excerpt: 'Founder Joseph Khoza joined global change-makers in Munich to discuss financial inclusion through entrepreneurship as an Absa x YAEI beneficiary delegate.',
     body: "StritGRAD Academy Founder Joseph Khoza represented the organisation at One Young World 2025 in Munich, contributing to discussions on financial inclusion through entrepreneurship. Reflecting on the summit, Joseph said the experience reinforced that inclusion isn't a policy goal — it's a daily commitment to equipping people with the tools and opportunities to build their own livelihoods. He attended as an Absa x YAEI (Youth Africa Works Employability Initiative) beneficiary, a partnership that has been instrumental in StritGRAD's growth.",
-    image: '/images/people/founder-joseph-khoza.png'
+    image: '/images/people/founder-joseph-khoza.jpg'
   },
   {
     slug: 'yet2025-absa-financial-inclusion-symposium',
@@ -209,24 +209,6 @@ export const newsItems = [
     excerpt: 'Trained StritGRAD youth are earning income and experience as field enumerators supporting community and market research projects.',
     body: "A growing cohort of StritGRAD-trained young people now works as professional field researchers, going door-to-door across communities to gather data that helps businesses, funders and government better understand local needs. It's a clear example of how our Entrepreneurship Tours and Market Solutions training translate directly into paid work.",
     image: '/images/programmes/fieldwork-outreach.png'
-  },
-  {
-    slug: 'financial-literacy-research-report',
-    title: 'New Research: The State of Youth Financial Literacy in South Africa',
-    date: '2026-04-22',
-    category: 'Research',
-    excerpt: 'Our latest research publication explores financial literacy gaps among South African youth and recommends policy interventions.',
-    body: 'StritGRAD Academy\'s research unit has released a comprehensive report examining financial literacy levels among South African youth aged 18-35. The findings highlight critical gaps in savings behaviour, credit understanding and investment awareness, along with a set of policy and programmatic recommendations for government, funders and civil society organisations.',
-    image: '/images/gallery/absa-financial-inclusion-symposium.jpg'
-  },
-  {
-    slug: 'blog-why-financial-literacy-matters',
-    title: 'Why Financial Literacy Is the Missing Link in Youth Entrepreneurship',
-    date: '2026-02-10',
-    category: 'Blog',
-    excerpt: 'Our Founder reflects on why financial literacy must sit at the core of every youth empowerment strategy.',
-    body: 'Too often, entrepreneurship support focuses solely on business ideas and pitching, while overlooking the foundational financial skills entrepreneurs need to sustain a business long-term. In this reflection, our Founder unpacks why StritGRAD Academy places financial literacy at the centre of everything we do — and why other organisations should too.',
-    image: '/images/gallery/school-engagement-classroom.jpg'
   }
 ]
 
@@ -246,18 +228,16 @@ export const pastEvents = [
   { title: 'Gauteng School & Community Outreach Day', date: '2025-08-14', location: 'Gauteng', recap: 'The School Exit Programme reached learners and youth directly in their communities alongside Gauteng Province partners.', image: '/images/gallery/gauteng-community-outreach.jpg' }
 ]
 
+// Real, downloadable resource files live in /public/resources/.
+// Each entry's `file` points to the actual file so the Download button works.
 export const resources = [
-  { id: 1, title: 'Business Plan Template (Editable)', category: 'Business Templates', description: 'A comprehensive, easy-to-use business plan template designed for early-stage entrepreneurs.' },
-  { id: 2, title: 'Investor-Ready Pitch Deck Template', category: 'Pitch Deck Templates', description: 'A 12-slide pitch deck template used in our Entrepreneurship Development programme.' },
-  { id: 3, title: 'Guide to Youth Funding Opportunities in SA', category: 'Funding Guides', description: 'A curated guide to grants, loans and incubation funding available to South African youth entrepreneurs.' },
-  { id: 4, title: 'Personal Budgeting Workbook', category: 'Financial Literacy Resources', description: 'A practical workbook to help young people build a personal budget and savings plan.' },
-  { id: 5, title: 'Facilitator Training Manual', category: 'Training Material', description: 'Core training material used to onboard and train StritGRAD Academy facilitators.' },
-  { id: 6, title: 'State of Youth Financial Literacy Report 2026', category: 'Research Publications', description: 'Our flagship annual research publication on youth financial literacy in South Africa.' },
-  { id: 7, title: 'How to Register a Business in South Africa', category: 'Videos', description: 'A step-by-step video walkthrough of the CIPC business registration process.' },
-  { id: 8, title: 'Stakeholder Engagement Toolkit', category: 'Business Templates', description: 'Tools and templates for engaging investors, funders and community stakeholders.' }
+  { id: 1, title: 'Business Plan Template', category: 'Business Templates', description: 'A structured, fill-in business plan template covering every section funders expect to see — from executive summary to financial projections.', file: '/resources/StritGRAD-Business-Plan-Template.docx' },
+  { id: 2, title: 'Investor Pitch Deck Template', category: 'Pitch Deck Templates', description: 'An 11-slide, brand-ready pitch deck template used in our Entrepreneurship Development programme — problem, solution, market, traction, ask and more.', file: '/resources/StritGRAD-Pitch-Deck-Template.pptx' },
+  { id: 3, title: 'Guide to Youth Funding Opportunities in SA', category: 'Funding Guides', description: 'An orientation guide to government agencies, development finance and incubators supporting South African youth entrepreneurs.', file: '/resources/StritGRAD-Youth-Funding-Guide.pdf' },
+  { id: 4, title: 'Personal Budgeting Workbook', category: 'Financial Literacy Resources', description: 'A ready-to-use spreadsheet with a monthly budget, savings tracker and expense log — formulas already built in.', file: '/resources/StritGRAD-Personal-Budgeting-Workbook.xlsx' }
 ]
 
-export const resourceCategories = ['All', 'Business Templates', 'Pitch Deck Templates', 'Funding Guides', 'Financial Literacy Resources', 'Training Material', 'Research Publications', 'Videos']
+export const resourceCategories = ['All', 'Business Templates', 'Pitch Deck Templates', 'Funding Guides', 'Financial Literacy Resources']
 
 export const alumni = [
   { name: 'SpazaEats Founder', business: 'SpazaEats', year: 2025, image: '/images/people/spazaeats-alumni-business.png' }
@@ -277,7 +257,7 @@ export const galleryPhotos = [
   { id: 8, category: 'Community Engagement', src: '/images/gallery/gauteng-community-outreach.jpg', caption: 'Gauteng community outreach' },
   { id: 9, category: 'Community Engagement', src: '/images/gallery/school-engagement-classroom.jpg', caption: 'School Exit Programme in session' },
   { id: 10, category: 'Competitions', src: '/images/gallery/partnership-handover.jpg', caption: 'StritGRAD Club recognition handover' },
-  { id: 11, category: 'Graduations', src: '/images/people/founder-joseph-khoza.png', caption: 'Founder Joseph Khoza at One Young World 2025' },
+  { id: 11, category: 'Graduations', src: '/images/people/founder-joseph-khoza.jpg', caption: 'Founder Joseph Khoza at One Young World 2025' },
   { id: 12, category: 'Community Engagement', src: '/images/people/spazaeats-alumni-business.png', caption: 'SpazaEats — alumni-owned enterprise' }
 ]
 
@@ -292,14 +272,13 @@ export const values = [
   { title: 'Sustainability', description: 'We design programmes and businesses built to last, long after our direct involvement ends.' }
 ]
 
+// Only Joseph Khoza is a confirmed real profile. No placeholder team
+// members are added — the About page shows only what's listed here.
 export const leadership = [
-  { name: 'Joseph Khoza', role: 'Founder & Executive Director', filled: true }
-  // Add real leadership team members here as { name, role, filled: true }.
-  // Placeholder slots below render as "Add Team Member" cards on the About page
-  // until real names and roles are supplied.
+  { name: 'Joseph Khoza', role: 'Founder & Executive Director' }
 ]
 
-export const leadershipPlaceholderCount = 5
+export const leadershipPlaceholderCount = 0
 
 export const provinces = [
   { name: 'Gauteng', youth: '4,200+' },
@@ -313,10 +292,10 @@ export const provinces = [
   { name: 'Northern Cape', youth: '400+' }
 ]
 
+// LinkedIn intentionally omitted — not currently used by the organisation.
 export const socials = {
   facebook: 'https://www.facebook.com/stritgradacademy',
   instagram: 'https://www.instagram.com/stritgradacademy',
-  linkedin: 'https://www.linkedin.com/company/stritgrad-academy',
   youtube: 'https://www.youtube.com/@stritgradacademy',
   instagramHandle: '@stritgradacademy'
 }

@@ -26,10 +26,10 @@ export default function About() {
             StritGRAD Academy was founded by Joseph Khoza out of a simple but urgent observation: too many talented young South Africans were leaving school and college with qualifications, but without the practical skills, networks or confidence to translate that potential into a livelihood. What began with a handful of community workshops has grown into a multi-programme organisation, including our enterprise development arm, StritGRAD Market Solutions.
           </p>
           <p className="text-graytxt leading-relaxed mb-4">
-            What started as a grassroots response to youth unemployment has since grown into a structured, multi-programme organisation operating in all nine provinces. Along the way, we've learned that sustainable change requires more than good intentions — it requires rigorous programme design, strong partnerships, and an unwavering focus on measurable outcomes.
+            What started as a grassroots response to youth unemployment has since grown into a structured, multi-programme organisation. Along the way, we've learned that sustainable change requires more than good intentions — it requires rigorous programme design, strong partnerships, and an unwavering focus on measurable outcomes.
           </p>
           <p className="text-graytxt leading-relaxed">
-            Today, StritGRAD Academy stands as one of South Africa's fastest-growing youth empowerment organisations — but our mission remains the same as it was on day one: to bridge the gap between education, employability and entrepreneurship for the young people who need it most.
+            Today, StritGRAD Academy continues to grow as a youth empowerment organisation — but our mission remains the same as it was on day one: to bridge the gap between education, employability and entrepreneurship for the young people who need it most.
           </p>
         </div>
       </section>
@@ -97,8 +97,13 @@ export default function About() {
       {/* FOUNDER */}
       <section className="bg-white">
         <div className="section grid md:grid-cols-3 gap-10 items-center">
-          <div className="rounded-xl overflow-hidden h-80 md:col-span-1 bg-navy-50">
-            <img src="/images/people/founder-joseph-khoza.png" alt="Joseph Khoza, Founder of StritGRAD Academy" className="w-full h-full object-cover object-top" loading="lazy" />
+          <div className="rounded-xl overflow-hidden h-[28rem] md:col-span-1 bg-navy-50 shadow-cardHover">
+            <img
+              src="/images/people/founder-joseph-khoza.jpg"
+              alt="Joseph Khoza, Founder of StritGRAD Academy"
+              className="w-full h-full object-cover object-top"
+              loading="lazy"
+            />
           </div>
           <div className="md:col-span-2">
             <p className="text-gold font-semibold uppercase tracking-widest text-sm mb-3">Meet Our Founder</p>
@@ -121,13 +126,13 @@ export default function About() {
       <section className="section">
         <p className="text-gold font-semibold uppercase tracking-widest text-sm mb-3">Our People</p>
         <h2 className="section-title">Leadership Team</h2>
-        <p className="section-subtitle">A diverse, experienced team driving StritGRAD Academy's mission forward.</p>
+        <p className="section-subtitle">The team driving StritGRAD Academy's mission forward.</p>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
           {leadership.map((l) => (
             <div key={l.name} className="text-center">
               <div className="rounded-full overflow-hidden w-36 h-36 mx-auto mb-4 shadow-card bg-navy-50">
                 {l.name === 'Joseph Khoza' ? (
-                  <img src="/images/people/founder-joseph-khoza.png" alt={l.name} className="w-full h-full object-cover object-top" loading="lazy" />
+                  <img src="/images/people/founder-joseph-khoza.jpg" alt={l.name} className="w-full h-full object-cover object-top" loading="lazy" />
                 ) : (
                   <ImageBlock icon={Users} tone="gold" />
                 )}

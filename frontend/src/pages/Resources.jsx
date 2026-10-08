@@ -7,11 +7,11 @@ import { resources, resourceCategories } from '../utils/content.js'
 export default function Resources() {
   const [category, setCategory] = useState('All')
   const filtered = category === 'All' ? resources : resources.filter((r) => r.category === category)
-  const featured = resources.slice(0, 3)
+  const featured = resources
 
   return (
     <div>
-      <SEO title="Resource Centre" description="Free business templates, pitch deck templates, funding guides, financial literacy resources and research publications from StritGRAD Academy." path="/resources" />
+      <SEO title="Resource Centre" description="Free business templates, pitch deck templates, funding guides and financial literacy resources from StritGRAD Academy." path="/resources" />
       <PageHeader eyebrow="Free & Open" title="Resource Centre" description="Practical tools, templates and guides to support your entrepreneurial journey — free to download." />
 
       {/* Featured */}
@@ -20,16 +20,16 @@ export default function Resources() {
           <Star className="text-gold" size={20} fill="#c9a84c" />
           <h2 className="text-2xl font-extrabold text-navy">Featured Resources</h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {featured.map((r) => (
             <div key={r.id} className="card border-2 border-gold/40">
               <FileText className="text-gold mb-4" size={28} />
               <span className="text-[11px] font-semibold text-navy/60 uppercase tracking-wide">{r.category}</span>
               <h3 className="font-bold text-navy text-lg mt-1 mb-2">{r.title}</h3>
               <p className="text-sm text-graytxt leading-relaxed mb-5">{r.description}</p>
-              <button className="btn-navy w-full text-sm py-2.5">
+              <a href={r.file} download className="btn-navy w-full text-sm py-2.5">
                 <Download size={16} /> Download
-              </button>
+              </a>
             </div>
           ))}
         </div>
@@ -59,9 +59,9 @@ export default function Resources() {
                 <span className="text-[11px] font-semibold text-gold-700 uppercase tracking-wide">{r.category}</span>
                 <h3 className="font-bold text-navy mt-1 mb-2">{r.title}</h3>
                 <p className="text-sm text-graytxt leading-relaxed mb-5 flex-1">{r.description}</p>
-                <button className="btn-outline !border-navy !text-navy hover:!bg-navy hover:!text-white w-full text-sm py-2.5">
+                <a href={r.file} download className="btn-outline !border-navy !text-navy hover:!bg-navy hover:!text-white w-full text-sm py-2.5">
                   <Download size={16} /> Download
-                </button>
+                </a>
               </div>
             ))}
             {filtered.length === 0 && <p className="text-graytxt col-span-full">No resources found in this category.</p>}

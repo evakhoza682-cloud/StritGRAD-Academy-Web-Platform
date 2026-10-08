@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom'
-import { Facebook, Instagram, Linkedin, Youtube, MapPin, Phone, Mail } from 'lucide-react'
+import { Facebook, Instagram, Youtube, MapPin, Phone, Mail } from 'lucide-react'
 import NewsletterForm from './NewsletterForm.jsx'
 import { socials } from '../utils/content.js'
 
 const socialLinks = [
   { Icon: Facebook, href: socials.facebook, label: 'Facebook' },
   { Icon: Instagram, href: socials.instagram, label: 'Instagram' },
-  { Icon: Linkedin, href: socials.linkedin, label: 'LinkedIn' },
   { Icon: Youtube, href: socials.youtube, label: 'YouTube' }
 ]
 

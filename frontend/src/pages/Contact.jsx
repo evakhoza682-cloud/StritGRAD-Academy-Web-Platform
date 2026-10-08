@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { MapPin, Phone, Mail, Clock, Send, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, Send, Facebook, Instagram, Youtube } from 'lucide-react'
 import SEO from '../components/SEO.jsx'
 import PageHeader from '../components/PageHeader.jsx'
 import FormAlert from '../components/FormAlert.jsx'
@@ -9,7 +9,6 @@ import { socials } from '../utils/content.js'
 const socialLinks = [
   { Icon: Facebook, href: socials.facebook, label: 'Facebook' },
   { Icon: Instagram, href: socials.instagram, label: 'Instagram' },
-  { Icon: Linkedin, href: socials.linkedin, label: 'LinkedIn' },
   { Icon: Youtube, href: socials.youtube, label: 'YouTube' }
 ]
 

@@ -20,12 +20,21 @@ h1, h2, h3, h4, h5, h6 {
 @layer components {
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 bg-gold text-navy font-semibold px-6 py-3 rounded-md shadow-card hover:bg-gold-light hover:shadow-cardHover transition-all duration-300 text-sm md:text-base;
+    transform: perspective(600px) translateZ(0);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  }
+  .btn-primary:hover {
+    transform: perspective(600px) translateZ(12px) translateY(-2px);
   }
   .btn-outline {
     @apply inline-flex items-center justify-center gap-2 border-2 border-white text-white font-semibold px-6 py-3 rounded-md hover:bg-white hover:text-navy transition-all duration-300 text-sm md:text-base;
   }
   .btn-navy {
     @apply inline-flex items-center justify-center gap-2 bg-navy text-white font-semibold px-6 py-3 rounded-md shadow-card hover:bg-navy-700 hover:shadow-cardHover transition-all duration-300 text-sm md:text-base;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  }
+  .btn-navy:hover {
+    transform: translateY(-2px);
   }
   .section {
     @apply py-16 md:py-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto;
@@ -36,8 +45,17 @@ h1, h2, h3, h4, h5, h6 {
   .section-subtitle {
     @apply text-graytxt text-base md:text-lg max-w-2xl mb-12 leading-relaxed;
   }
+  /* 3D card effect: subtle tilt + lift + shadow depth on hover */
   .card {
-    @apply bg-white rounded-xl shadow-card hover:shadow-cardHover transition-all duration-300 p-6;
+    @apply bg-white rounded-xl shadow-card p-6;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+    will-change: transform;
+  }
+  .card:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateY(-6px) translateZ(10px);
+    box-shadow: 0 24px 48px rgba(10, 22, 40, 0.18), 0 8px 16px rgba(10, 22, 40, 0.08);
   }
   .input {
     @apply w-full border border-gray-300 rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition;
@@ -53,4 +71,27 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Site-wide centered background watermark logo (see App.jsx) */
+.bg-watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(70vw, 900px);
+  height: min(70vw, 900px);
+  transform: translate(-50%, -50%) rotate(-6deg);
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 0;
+  object-fit: contain;
+}
+
+/* Gentle floating 3D motion for hero/decorative logo marks */
+@keyframes floatTilt {
+  0%, 100% { transform: translate(-50%, -50%) rotate(-6deg) translateY(0px); }
+  50% { transform: translate(-50%, -50%) rotate(-4deg) translateY(-14px); }
+}
+.bg-watermark-float {
+  animation: floatTilt 10s ease-in-out infinite;
 }

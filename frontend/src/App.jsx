@@ -41,34 +41,48 @@ export default function App() {
   const isAdmin = location.pathname.startsWith('/admin')
 
   return (
-    <div className="flex flex-col min-h-screen bg-offwhite">
+    <div className="flex flex-col min-h-screen bg-offwhite relative">
       <ScrollToTop />
-      {!isAdmin && <Navbar />}
-      <main className="flex-1">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/programmes" element={<Programmes />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/alumni" element={<Alumni />} />
-          <Route path="/volunteer" element={<Volunteer />} />
-          <Route path="/donate" element={<Donate />} />
-          <Route path="/partners" element={<Partners />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/news/:slug" element={<NewsArticle />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/popia" element={<Popia />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/admin" element={<AdminLogin />} />
-          <Route path="/admin/dashboard" element={<AdminDashboard />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
-      {!isAdmin && <Footer />}
-      {!isAdmin && <WhatsAppButton />}
+
+      {/* Site-wide centered logo watermark — sits behind all page content,
+          very low opacity by design so it reads as texture, not a logo. */}
+      {!isAdmin && (
+        <img
+          src="/images/logo/stritgrad-logo.png"
+          alt=""
+          aria-hidden="true"
+          className="bg-watermark bg-watermark-float"
+        />
+      )}
+
+      <div className="relative z-10 flex flex-col min-h-screen">
+        {!isAdmin && <Navbar />}
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/programmes" element={<Programmes />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/alumni" element={<Alumni />} />
+            <Route path="/volunteer" element={<Volunteer />} />
+            <Route path="/donate" element={<Donate />} />
+            <Route path="/partners" element={<Partners />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/news/:slug" element={<NewsArticle />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/popia" element={<Popia />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/admin" element={<AdminLogin />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        {!isAdmin && <Footer />}
+        {!isAdmin && <WhatsAppButton />}
+      </div>
     </div>
   )
 }
