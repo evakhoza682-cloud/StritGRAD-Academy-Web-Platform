@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { Heart, GraduationCap, School, Rocket, ShieldCheck, Send, Lock } from 'lucide-react'
 import SEO from '../components/SEO.jsx'
@@ -187,7 +188,7 @@ export default function Donate() {
                 <s.icon className="text-gold mb-4" size={30} />
                 <h3 className="font-bold text-navy text-lg mb-2">{s.title}</h3>
                 <p className="text-graytxt text-sm leading-relaxed mb-5">{s.desc}</p>
-                <a href="/contact" className="text-gold-700 font-semibold text-sm hover:text-navy transition">Get Started →</a>
+                <Link to={`/contact?type=Corporate%20Partnership&subject=${encodeURIComponent(s.title)}`} className="text-gold-700 font-semibold text-sm hover:text-navy transition">Get Started →</Link>
               </div>
             ))}
           </div>

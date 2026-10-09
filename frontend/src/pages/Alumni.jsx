@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Users, Award, Handshake, Globe, ArrowRight, UserPlus } from 'lucide-react'
 import SEO from '../components/SEO.jsx'
 import PageHeader from '../components/PageHeader.jsx'
@@ -32,13 +33,13 @@ export default function Alumni() {
               <p className="text-graytxt text-[11px]">Class of {a.year}</p>
             </div>
           ))}
-          <a href="/contact" className="card text-center border-2 border-dashed border-gray-300 flex flex-col items-center justify-center hover:border-gold transition">
+          <Link to="/contact" className="card text-center border-2 border-dashed border-gray-300 flex flex-col items-center justify-center hover:border-gold transition">
             <div className="rounded-full w-24 h-24 mx-auto mb-4 border-2 border-dashed border-gray-300 flex items-center justify-center">
               <UserPlus className="text-gray-300" size={26} />
             </div>
             <h3 className="font-semibold text-graytxt text-sm">Are You a StritGRAD Alumnus?</h3>
             <p className="text-gold-700 text-xs font-medium">Get featured here →</p>
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -76,7 +77,7 @@ export default function Alumni() {
           <p className="text-graytxt text-sm leading-relaxed mb-5">
             Experienced alumni and industry professionals can give back by mentoring current programme participants — sharing guidance, networks and lived experience with the next generation.
           </p>
-          <a href="/volunteer#mentor" className="btn-navy text-sm py-2.5">Apply to Mentor <ArrowRight size={16} /></a>
+          <Link to="/volunteer" className="btn-navy text-sm py-2.5">Apply to Mentor <ArrowRight size={16} /></Link>
         </div>
         <div className="card border-t-4 border-navy">
           <Users className="text-navy mb-4" size={28} />
@@ -84,7 +85,7 @@ export default function Alumni() {
           <p className="text-graytxt text-sm leading-relaxed mb-5">
             Current programme participants and recent graduates can request to be matched with an experienced mentor from our alumni and partner network.
           </p>
-          <a href="/contact" className="btn-outline !border-navy !text-navy hover:!bg-navy hover:!text-white text-sm py-2.5">Request a Mentor <ArrowRight size={16} /></a>
+          <Link to="/contact?subject=Request%20a%20Mentor" className="btn-outline !border-navy !text-navy hover:!bg-navy hover:!text-white text-sm py-2.5">Request a Mentor <ArrowRight size={16} /></Link>
         </div>
       </section>
 
@@ -117,8 +118,7 @@ export default function Alumni() {
                 Connect with fellow alumni, share opportunities and get support anytime through our online community platforms.
               </p>
               <div className="flex flex-col gap-3">
-                <a href="#" className="btn-outline !border-navy !text-navy hover:!bg-navy hover:!text-white text-sm py-2.5 justify-start">WhatsApp Alumni Community</a>
-                <a href="#" className="btn-outline !border-navy !text-navy hover:!bg-navy hover:!text-white text-sm py-2.5 justify-start">LinkedIn Alumni Group</a>
+                <Link to="/contact?subject=Join%20the%20Alumni%20Community" className="btn-outline !border-navy !text-navy hover:!bg-navy hover:!text-white text-sm py-2.5 justify-start">Request to Join the Alumni Community</Link>
               </div>
             </div>
           </div>

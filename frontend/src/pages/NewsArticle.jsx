@@ -13,8 +13,10 @@ export default function NewsArticle() {
   return (
     <div>
       <SEO title={article.title} description={article.excerpt} path={`/news/${slug}`} />
-      <div className="h-80 md:h-96 bg-navy-50">
-        {article.image ? (
+      <div className={article.portrait ? 'bg-navy flex justify-center py-8' : 'h-80 md:h-96 bg-navy-50'}>
+        {article.image && article.portrait ? (
+          <img src={article.image} alt={article.title} className="h-[26rem] md:h-[30rem] w-auto object-contain rounded-lg shadow-cardHover" loading="eager" />
+        ) : article.image ? (
           <img src={article.image} alt={article.title} className="w-full h-full object-cover" loading="eager" />
         ) : (
           <ImageBlock icon={Rocket} tone="navy" />

@@ -12,18 +12,22 @@ export default function NewsletterForm({ compact = false }) {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
-    if (!emailValid(email)) {
+    const clean = email.trim()
+    if (!emailValid(clean)) {
       setError('Please enter a valid email address.')
       return
     }
     setStatus('loading')
     try {
-      await api.post('/api/newsletter', { email })
+      await api.post('/api/newsletter', { email: clean })
       setStatus('success')
       setEmail('')
     } catch (err) {
       setStatus('error')
-      setError('Something went wrong. Please try again.')
+      const serverMsg = err?.response?.data?.error || err?.response?.data?.message
+      setError(err?.response
+        ? (serverMsg || 'Something went wrong. Please try again.')
+        : 'Could not reach the server. Please check your connection and try again.')
     }
   }
 
@@ -36,10 +40,10 @@ export default function NewsletterForm({ compact = false }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full">
+    <form onSubmit={handleSubmit} noValidate className="flex flex-col sm:flex-row gap-3 w-full">
       <input
         type="email"
-        required
+        aria-label="Email address"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email address"
@@ -50,8 +54,7 @@ export default function NewsletterForm({ compact = false }) {
       <button type="submit" disabled={status === 'loading'} className="btn-primary shrink-0 disabled:opacity-60">
         <Send size={16} /> {status === 'loading' ? 'Sending...' : 'Subscribe'}
       </button>
-      {error && <p className="text-red-400 text-xs mt-1 sm:hidden">{error}</p>}
-      {error && <p className="hidden sm:block text-red-400 text-xs absolute mt-12">{error}</p>}
+      {error && <p role="alert" className="text-red-400 text-xs sm:basis-full">{error}</p>}
     </form>
   )
 }

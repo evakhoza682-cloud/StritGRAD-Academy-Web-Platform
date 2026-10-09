@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { MapPin, Phone, Mail, Clock, Send, Facebook, Instagram, Youtube } from 'lucide-react'
+import { useSearchParams } from 'react-router-dom'
+import { MapPin, Phone, Mail, Clock, Send, Facebook, Instagram } from 'lucide-react'
 import SEO from '../components/SEO.jsx'
 import PageHeader from '../components/PageHeader.jsx'
 import FormAlert from '../components/FormAlert.jsx'
@@ -8,14 +9,16 @@ import { socials } from '../utils/content.js'
 
 const socialLinks = [
   { Icon: Facebook, href: socials.facebook, label: 'Facebook' },
-  { Icon: Instagram, href: socials.instagram, label: 'Instagram' },
-  { Icon: Youtube, href: socials.youtube, label: 'YouTube' }
-]
+  { Icon: Instagram, href: socials.instagram, label: 'Instagram' }
+].filter((s) => s.href)
 
 const enquiryTypes = ['Programme Enquiry', 'School Enquiry', 'Corporate Partnership', 'Media Enquiry', 'Volunteer Enquiry', 'General Enquiry']
 
 export default function Contact() {
-  const [form, setForm] = useState({ fullName: '', email: '', phone: '', enquiryType: 'General Enquiry', subject: '', message: '' })
+  const [params] = useSearchParams()
+  const presetType = enquiryTypes.includes(params.get('type')) ? params.get('type') : 'General Enquiry'
+  const presetSubject = params.get('subject') || ''
+  const [form, setForm] = useState({ fullName: '', email: '', phone: '', enquiryType: presetType, subject: presetSubject, message: '' })
   const [status, setStatus] = useState({ type: '', message: '' })
   const [loading, setLoading] = useState(false)
   const update = (f) => (e) => setForm((s) => ({ ...s, [f]: e.target.value }))
@@ -34,7 +37,7 @@ export default function Contact() {
     try {
       await api.post('/api/contact', form)
       setStatus({ type: 'success', message: "Thank you for reaching out — we'll get back to you within 2 business days." })
-      setForm({ fullName: '', email: '', phone: '', enquiryType: 'General Enquiry', subject: '', message: '' })
+      setForm({ fullName: '', email: '', phone: '', enquiryType: presetType, subject: presetSubject, message: '' })
     } catch {
       setStatus({ type: 'error', message: 'Something went wrong sending your message. Please try again.' })
     } finally {
@@ -108,6 +111,7 @@ export default function Contact() {
 
           <div className="card">
             <h3 className="font-bold text-navy mb-4">Follow Us</h3>
+            {socialLinks.length === 0 && <p className="text-sm text-graytxt">Social media links coming soon.</p>}
             <div className="flex gap-3 mb-3">
               {socialLinks.map(({ Icon, href, label }) => (
                 <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="w-10 h-10 rounded-full bg-navy text-gold flex items-center justify-center hover:bg-gold hover:text-navy transition">
@@ -115,7 +119,7 @@ export default function Contact() {
                 </a>
               ))}
             </div>
-            <p className="text-xs text-graytxt">Instagram: <a href={socials.instagram} target="_blank" rel="noopener noreferrer" className="text-gold-700 font-semibold hover:underline">{socials.instagramHandle}</a></p>
+            {socials.instagram && socials.instagramHandle && <p className="text-xs text-graytxt">Instagram: <a href={socials.instagram} target="_blank" rel="noopener noreferrer" className="text-gold-700 font-semibold hover:underline">{socials.instagramHandle}</a></p>}
           </div>
         </div>
       </section>

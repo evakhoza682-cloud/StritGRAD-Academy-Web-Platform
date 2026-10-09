@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { GraduationCap, Briefcase, Rocket, PiggyBank, Users, Bus, CheckCircle2, ArrowRight } from 'lucide-react'
 import SEO from '../components/SEO.jsx'
 import PageHeader from '../components/PageHeader.jsx'
@@ -87,13 +88,13 @@ export default function Programmes() {
                   {p.id === 'tours' && (
                     <div className="mb-6">
                       <h3 className="font-bold text-navy mb-2 text-sm uppercase tracking-wide">Upcoming Tour Dates</h3>
-                      <p className="text-graytxt text-sm">See our full national tour schedule on the <a href="/events" className="text-gold-700 font-semibold underline">Events page</a>.</p>
+                      <p className="text-graytxt text-sm">See our full national tour schedule on the <Link to="/events" className="text-gold-700 font-semibold underline">Events page</Link>.</p>
                     </div>
                   )}
 
-                  <a href="/contact" className="btn-navy">
+                  <Link to={`/contact?type=Programme%20Enquiry&subject=${encodeURIComponent(`${p.cta} - ${p.title}`)}`} className="btn-navy">
                     {p.cta} <ArrowRight size={18} />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </section>

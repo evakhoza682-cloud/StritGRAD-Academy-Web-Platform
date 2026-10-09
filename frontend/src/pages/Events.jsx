@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { Calendar, MapPin, ArrowRight } from 'lucide-react'
 import SEO from '../components/SEO.jsx'
@@ -51,9 +52,9 @@ export default function Events() {
                   <MapPin size={14} className="text-gold" /> {e.location}
                 </p>
                 <p className="text-sm text-graytxt leading-relaxed mb-4">{e.description}</p>
-                <a href="/contact" className="btn-primary py-2 px-4 text-sm">
+                <Link to={`/contact?type=Programme%20Enquiry&subject=${encodeURIComponent(`Register - ${e.title}`)}`} className="btn-primary py-2 px-4 text-sm">
                   Register Now <ArrowRight size={14} />
-                </a>
+                </Link>
               </div>
             </div>
           ))}

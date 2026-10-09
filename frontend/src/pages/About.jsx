@@ -2,6 +2,7 @@ import { Target, Eye, Users, MapPin, UserPlus } from 'lucide-react'
 import SEO from '../components/SEO.jsx'
 import PageHeader from '../components/PageHeader.jsx'
 import ImageBlock from '../components/ImageBlock.jsx'
+import { founderPhoto } from '../utils/founderImage.js'
 import { values, leadership, leadershipPlaceholderCount, provinces } from '../utils/content.js'
 
 export default function About() {
@@ -99,7 +100,7 @@ export default function About() {
         <div className="section grid md:grid-cols-3 gap-10 items-center">
           <div className="rounded-xl overflow-hidden h-[28rem] md:col-span-1 bg-navy-50 shadow-cardHover">
             <img
-              src="/images/people/founder-joseph-khoza.jpg"
+              src={founderPhoto}
               alt="Joseph Khoza, Founder of StritGRAD Academy"
               className="w-full h-full object-cover object-top"
               loading="lazy"
@@ -132,7 +133,7 @@ export default function About() {
             <div key={l.name} className="text-center">
               <div className="rounded-full overflow-hidden w-36 h-36 mx-auto mb-4 shadow-card bg-navy-50">
                 {l.name === 'Joseph Khoza' ? (
-                  <img src="/images/people/founder-joseph-khoza.jpg" alt={l.name} className="w-full h-full object-cover object-top" loading="lazy" />
+                  <img src={founderPhoto} alt={l.name} className="w-full h-full object-cover object-top" loading="lazy" />
                 ) : (
                   <ImageBlock icon={Users} tone="gold" />
                 )}

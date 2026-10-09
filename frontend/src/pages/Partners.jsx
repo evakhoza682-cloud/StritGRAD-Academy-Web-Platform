@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { Handshake, TrendingUp, Award, Megaphone, Users2, Send, Building2 } from 'lucide-react'
 import SEO from '../components/SEO.jsx'
@@ -144,9 +145,9 @@ export default function Partners() {
         <div className="section text-center">
           <h2 className="section-title">Volunteer Opportunities for Corporates</h2>
           <p className="section-subtitle mx-auto">Engage your workforce directly with our programmes, tours and events.</p>
-          <a href="/volunteer" className="btn-navy">
+          <Link to="/volunteer" className="btn-navy">
             <Handshake size={18} /> Explore Corporate Volunteering
-          </a>
+          </Link>
         </div>
       </section>
 

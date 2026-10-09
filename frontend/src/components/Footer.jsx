@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom'
-import { Facebook, Instagram, Youtube, MapPin, Phone, Mail } from 'lucide-react'
+import { Facebook, Instagram, MapPin, Phone, Mail } from 'lucide-react'
 import NewsletterForm from './NewsletterForm.jsx'
 import { socials } from '../utils/content.js'
 
 const socialLinks = [
   { Icon: Facebook, href: socials.facebook, label: 'Facebook' },
-  { Icon: Instagram, href: socials.instagram, label: 'Instagram' },
-  { Icon: Youtube, href: socials.youtube, label: 'YouTube' }
-]
+  { Icon: Instagram, href: socials.instagram, label: 'Instagram' }
+].filter((s) => s.href)
 
 const quickLinks = [
   { label: 'About Us', to: '/about' },
@@ -50,7 +49,9 @@ export default function Footer() {
               </a>
             ))}
           </div>
-          <p className="text-xs text-white/50 mt-3">Follow us on Instagram <a href={socials.instagram} target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">{socials.instagramHandle}</a></p>
+          {socials.instagram && socials.instagramHandle && (
+            <p className="text-xs text-white/50 mt-3">Follow us on Instagram <a href={socials.instagram} target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">{socials.instagramHandle}</a></p>
+          )}
         </div>
 
         <div>

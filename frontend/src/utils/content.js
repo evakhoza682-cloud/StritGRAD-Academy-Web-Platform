@@ -1,3 +1,4 @@
+import { founderPhoto } from './founderImage.js'
 export const programmes = [
   {
     id: 'school-exit',
@@ -107,7 +108,7 @@ export const successStories = [
     business: 'Founder, StritGRAD Academy',
     location: 'Johannesburg, Gauteng',
     story: 'An Absa x YAEI beneficiary himself, Joseph represented StritGRAD Academy at One Young World 2025 in Munich, speaking on financial inclusion through entrepreneurship — reinforcing that inclusion is a daily commitment to giving people the tools to build their own livelihoods.',
-    image: '/images/people/founder-joseph-khoza.jpg'
+    image: founderPhoto
   },
   {
     name: 'SpazaEats Founder',
@@ -154,7 +155,8 @@ export const newsItems = [
     category: 'Impact Stories',
     excerpt: 'Founder Joseph Khoza joined global change-makers in Munich to discuss financial inclusion through entrepreneurship as an Absa x YAEI beneficiary delegate.',
     body: "StritGRAD Academy Founder Joseph Khoza represented the organisation at One Young World 2025 in Munich, contributing to discussions on financial inclusion through entrepreneurship. Reflecting on the summit, Joseph said the experience reinforced that inclusion isn't a policy goal — it's a daily commitment to equipping people with the tools and opportunities to build their own livelihoods. He attended as an Absa x YAEI (Youth Africa Works Employability Initiative) beneficiary, a partnership that has been instrumental in StritGRAD's growth.",
-    image: '/images/people/founder-joseph-khoza.jpg'
+    image: founderPhoto,
+    portrait: true
   },
   {
     slug: 'yet2025-absa-financial-inclusion-symposium',
@@ -257,7 +259,7 @@ export const galleryPhotos = [
   { id: 8, category: 'Community Engagement', src: '/images/gallery/gauteng-community-outreach.jpg', caption: 'Gauteng community outreach' },
   { id: 9, category: 'Community Engagement', src: '/images/gallery/school-engagement-classroom.jpg', caption: 'School Exit Programme in session' },
   { id: 10, category: 'Competitions', src: '/images/gallery/partnership-handover.jpg', caption: 'StritGRAD Club recognition handover' },
-  { id: 11, category: 'Graduations', src: '/images/people/founder-joseph-khoza.jpg', caption: 'Founder Joseph Khoza at One Young World 2025' },
+  { id: 11, category: 'Graduations', src: founderPhoto, caption: 'Founder Joseph Khoza at One Young World 2025' },
   { id: 12, category: 'Community Engagement', src: '/images/people/spazaeats-alumni-business.png', caption: 'SpazaEats — alumni-owned enterprise' }
 ]
 
@@ -294,8 +296,7 @@ export const provinces = [
 
 // LinkedIn intentionally omitted — not currently used by the organisation.
 export const socials = {
-  facebook: 'https://www.facebook.com/stritgradacademy',
-  instagram: 'https://www.instagram.com/stritgradacademy',
-  youtube: 'https://www.youtube.com/@stritgradacademy',
-  instagramHandle: '@stritgradacademy'
+  facebook: '',
+  instagram: '',
+  instagramHandle: ''
 }

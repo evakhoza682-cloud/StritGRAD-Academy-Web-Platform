@@ -11,15 +11,22 @@ dotenv.config()
 const app = express()
 
 // --- CORS ---
-const allowedOrigins = (process.env.CLIENT_ORIGIN || 'http://localhost:5173')
+app.set('trust proxy', 1)
+const allowedOrigins = (process.env.CLIENT_ORIGIN || '')
   .split(',')
   .map((o) => o.trim())
+  .filter(Boolean)
+const originPatterns = [
+  /^https:\/\/strit-?grad[a-z0-9-]*\.vercel\.app$/i,
+  /^https:\/\/(www\.)?stritgradacademy\.org\.za$/i,
+  /^http:\/\/localhost:\d+$/
+]
 
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) return callback(null, true)
-      callback(new Error('Not allowed by CORS'))
+      const ok = !origin || allowedOrigins.includes(origin) || originPatterns.some((p) => p.test(origin))
+      callback(null, ok)
     },
     credentials: true
   })
@@ -43,7 +50,6 @@ app.use('/api', formLimiter)
 // --- Health check ---
 app.get('/health', (req, res) => res.json({ status: 'ok', service: 'stritgrad-academy-backend' }))
 app.get('/', (req, res) => res.json({ status: 'ok', message: 'StritGRAD Academy API is running.' }))
-
 
 // --- Routes ---
 app.use('/api', publicRoutes)
