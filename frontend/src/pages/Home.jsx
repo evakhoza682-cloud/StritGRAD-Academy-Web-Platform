@@ -180,7 +180,7 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 mb-10">
             {partners.map((p) => (
-              <PartnerLogo key={p.name} name={p.name} domain={p.domain} />
+              <PartnerLogo key={p.name} name={p.name} logos={p.logos} domain={p.domain} />
             ))}
           </div>
           <Link to="/partners" className="btn-navy">

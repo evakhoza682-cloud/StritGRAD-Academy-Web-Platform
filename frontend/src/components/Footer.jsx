@@ -72,7 +72,7 @@ export default function Footer() {
           </ul>
           <div className="space-y-2 text-sm">
             <p className="flex items-start gap-2"><MapPin size={16} className="text-gold shrink-0 mt-0.5" /> 2071 Ntshunyana Street, Tladi, Soweto, Johannesburg, 1868</p>
-            <p className="flex items-center gap-2"><Phone size={16} className="text-gold shrink-0" /> +27 11 234 5678</p>
+            <p className="flex items-center gap-2"><Phone size={16} className="text-gold shrink-0" /> +27 84 816 4163</p>
             <p className="flex items-center gap-2"><Mail size={16} className="text-gold shrink-0" /> info@stritgradacademy.org.za</p>
           </div>
         </div>

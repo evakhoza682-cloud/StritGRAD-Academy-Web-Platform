@@ -130,21 +130,21 @@ export const successStories = [
 // `domain` is used to pull an official logo via a public logo lookup service —
 // see PartnerLogo.jsx. If a logo fails to load, a clean text badge is shown instead.
 export const partners = [
-  { name: 'Absa Group', domain: 'absa.africa' },
-  { name: 'Standard Bank', domain: 'standardbank.co.za' },
-  { name: 'Nedbank', domain: 'nedbank.co.za' },
-  { name: 'MTN Foundation', domain: 'mtn.com' },
-  { name: 'Coca-Cola Beverages SA', domain: 'ccbsa.co.za' },
-  { name: 'Harmony Gold', domain: 'harmony.co.za' },
-  { name: 'National Youth Development Agency', domain: 'nyda.gov.za' },
-  { name: 'Dept. of Small Business Development', domain: 'dsbd.gov.za' },
-  { name: 'Dept. of Basic Education', domain: 'education.gov.za' },
-  { name: 'GIZ South Africa', domain: 'giz.de' },
-  { name: 'USAID Southern Africa', domain: 'usaid.gov' },
-  { name: 'British Council', domain: 'britishcouncil.org' },
-  { name: 'University of Johannesburg', domain: 'uj.ac.za' },
-  { name: 'Tshwane University of Technology', domain: 'tut.ac.za' },
-  { name: 'Wits Enterprise', domain: 'wits.ac.za' }
+  { name: 'Absa Group', logos: ['absa'], domain: 'absa.africa' },
+  { name: 'Standard Bank', logos: ['standard bank', 'standardbank', 'standard-bank', 'standard'], domain: 'standardbank.co.za' },
+  { name: 'Nedbank', logos: ['nedbank', 'Nedbank'], domain: 'nedbank.co.za' },
+  { name: 'MTN Foundation', logos: ['mtn', 'mtn foundation', 'mtn-foundation'], domain: 'mtn.com' },
+  { name: 'Coca-Cola Beverages SA', logos: ['cocacola', 'coca cola', 'coca-cola'], domain: 'ccbsa.co.za' },
+  { name: 'Harmony Gold', logos: ['harmony', 'harmony gold', 'harmony-gold'], domain: 'harmony.co.za' },
+  { name: 'National Youth Development Agency', logos: ['NYDA', 'nyda'], domain: 'nyda.gov.za' },
+  { name: 'Dept. of Small Business Development', logos: ['depart.of small business development', 'dsbd', 'DSBD'], domain: 'dsbd.gov.za' },
+  { name: 'Dept. of Basic Education', logos: ['basic education', 'dbe', 'DBE'], domain: 'education.gov.za' },
+  { name: 'GIZ South Africa', logos: ['giz', 'GIZ'], domain: 'giz.de' },
+  { name: 'USAID Southern Africa', logos: ['USAID', 'usaid'], domain: 'usaid.gov' },
+  { name: 'British Council', logos: ['british coucil', 'british council', 'british-council'], domain: 'britishcouncil.org' },
+  { name: 'University of Johannesburg', logos: ['UJ', 'uj'], domain: 'uj.ac.za' },
+  { name: 'Tshwane University of Technology', logos: ['TUT', 'tut'], domain: 'tut.ac.za' },
+  { name: 'Wits Enterprise', logos: ['WITS ENTERPRISE', 'wits enterprise', 'wits'], domain: 'wits.ac.za' }
 ]
 
 export const newsItems = [
@@ -183,7 +183,8 @@ export const newsItems = [
     category: 'Programme Updates',
     excerpt: 'A renewed community engagement with Harmony Gold continues to open doors for youth-focused skills and enterprise development.',
     body: "StritGRAD Academy's team met with Harmony Gold representatives to strengthen an ongoing community partnership focused on youth skills development and local enterprise support. The engagement forms part of StritGRAD's growing network of mining-sector and corporate partnerships that channel CSR investment directly into measurable youth outcomes.",
-    image: '/images/gallery/harmony-partnership.jpg'
+    image: '/images/gallery/harmony-partnership.jpg',
+    compact: true
   },
   {
     slug: 'stritgrad-market-solutions-training-day',
@@ -296,7 +297,7 @@ export const provinces = [
 
 // LinkedIn intentionally omitted — not currently used by the organisation.
 export const socials = {
-  facebook: '',
-  instagram: '',
-  instagramHandle: ''
+  facebook: 'https://www.facebook.com/p/Stritgrad-Academy-100092981051739/',
+  instagram: 'https://www.instagram.com/stritgrad/',
+  instagramHandle: '@stritgrad'
 }

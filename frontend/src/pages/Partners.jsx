@@ -112,7 +112,7 @@ export default function Partners() {
           <p className="section-subtitle mx-auto">We're proud to work alongside these organisations in service of South Africa's youth.</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
             {partners.map((p) => (
-              <PartnerLogo key={p.name} name={p.name} domain={p.domain} />
+              <PartnerLogo key={p.name} name={p.name} logos={p.logos} domain={p.domain} />
             ))}
           </div>
         </div>

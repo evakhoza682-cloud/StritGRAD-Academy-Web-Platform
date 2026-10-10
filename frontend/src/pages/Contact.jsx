@@ -90,8 +90,8 @@ export default function Contact() {
           <div className="card">
             <h3 className="font-bold text-navy mb-4">Office Details</h3>
             <div className="space-y-4 text-sm text-graytxt">
-              <p className="flex items-start gap-3"><MapPin size={18} className="text-gold shrink-0 mt-0.5" /> 12 Enterprise Way, Sandton, Johannesburg, 2196, South Africa</p>
-              <p className="flex items-center gap-3"><Phone size={18} className="text-gold shrink-0" /> +27 11 234 5678</p>
+              <p className="flex items-start gap-3"><MapPin size={18} className="text-gold shrink-0 mt-0.5" /> 2071 Ntshunyana Street, Tladi, Soweto, Johannesburg, 1868<br /><span className="text-xs">Registered address: 1463 Melato Street, Soweto, Johannesburg, 1861</span></p>
+              <p className="flex items-center gap-3"><Phone size={18} className="text-gold shrink-0" /> +27 84 816 4163</p>
               <p className="flex items-center gap-3"><Mail size={18} className="text-gold shrink-0" /> info@stritgradacademy.org.za</p>
               <p className="flex items-start gap-3"><Clock size={18} className="text-gold shrink-0 mt-0.5" /> Monday – Friday: 08:00 – 17:00<br />Saturday: 09:00 – 13:00</p>
             </div>
@@ -100,7 +100,7 @@ export default function Contact() {
           <div className="card p-0 overflow-hidden">
             <iframe
               title="StritGRAD Academy Office Location"
-              src="https://www.google.com/maps?q=Sandton,Johannesburg,South+Africa&output=embed"
+              src="https://www.google.com/maps?q=2071+Ntshunyana+Street,Tladi,Soweto,Johannesburg,1868&output=embed"
               width="100%"
               height="240"
               style={{ border: 0 }}

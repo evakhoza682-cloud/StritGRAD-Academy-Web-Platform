@@ -52,9 +52,9 @@ export default function Alumni() {
           <div className="grid md:grid-cols-3 gap-8">
             {featuredBusinesses.map((a) => (
               <div key={a.name} className="card p-0 overflow-hidden">
-                <div className="h-44 bg-navy-50">
+                <div className="h-44 bg-navy-50 flex items-center justify-center py-2">
                   {a.image ? (
-                    <img src={a.image} alt={a.business} className="w-full h-full object-cover" loading="lazy" />
+                    <img src={a.image} alt={a.business} className="h-full w-auto max-w-[60%] object-contain rounded-md" loading="lazy" />
                   ) : (
                     <ImageBlock icon={Award} tone="gold" />
                   )}
